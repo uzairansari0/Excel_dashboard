@@ -6,7 +6,7 @@ st.set_page_config(page_title="Sales Dashboard Page 1",
                    page_icon=":bar_chart:",
                    layout="wide")
 
-@st.cache_data 
+@st.experimental_memo
 def get_data_from_excel():
     df = pd.read_excel(
         io="supermarkt_sales.xlsx",
