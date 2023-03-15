@@ -7,7 +7,7 @@ st.set_page_config(page_title="Sales Dashboard Page 1",
                    page_icon=":bar_chart:",
                    layout="wide")
 
-@st.experimental_memo
+@st.experimental_memo 
 def get_data_from_excel():
     df = pd.read_excel(
         io="supermarkt_sales.xlsx",
@@ -56,6 +56,18 @@ slider_date = st.sidebar.slider(
     value= dates,
     
 )
+
+dates= st.sidebar.date_input(
+    "Please select the Date",
+    datetime.date(2021, 1, 1)
+    )
+
+slider_date = st.sidebar.slider(
+    "Select Dates",
+    value= dates,
+    
+)
+
 
 df_selection = df.query(
     "City == @city & Customer_type == @customer_type & Gender == @gender & Date == @dates "
