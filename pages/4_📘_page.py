@@ -1,6 +1,7 @@
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+import datetime
 
 st.set_page_config(page_title="Sales Dashboard Page 1",
                    page_icon=":bar_chart:",
@@ -45,11 +46,15 @@ gender = st.sidebar.multiselect(
     default=df["Gender"].unique()
 )
 
-dates= st.sidebar.date_input("Please select the Date")
+dates= st.sidebar.date_input(
+    "Please select the Date",
+    datetime.date(2021, 1, 1)
+    )
 
 slider_date = st.sidebar.slider(
     "Select Dates",
-    value= dates
+    value= dates,
+    
 )
 
 df_selection = df.query(
