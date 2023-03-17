@@ -62,11 +62,11 @@ dates= st.sidebar.date_input(
     datetime.date(2021, 1, 1)
     )
 
-slider_date = st.sidebar.slider(
-    "Select Dates",
-    value= dates,
+# slider_date = st.sidebar.slider(
+#     "Select Dates",
+#     value= dates,
     
-)
+# )
 
 
 df_selection = df.query(
